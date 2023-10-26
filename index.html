@@ -1,34 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Boolzapp</title>
-		<link rel="stylesheet" href="css/app.css" />
-	</head>
-	<body>
-		<div id="app">
-			<div class="container__app">
-				<!-- app left sidebar  -->
-				<aside class="app__sidebar">
-					<div class="sidebar__heading-profile">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-					<div class="sidebar__notification-control">Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
-					<div class="sidebar__search-box">Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
-					<div class="sidebar__body">Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
-				</aside>
-				<!-- finish sidebar left -->
 
-				<!-- app main content -->
-				<main class="app__main">
-					<div class="main__heading-status">Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
-					<div class="main__body-message">Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
-					<div class="main__footer-reply">Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
-				</main>
-				<!-- finish main content  -->
-			</div>
-		</div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolzapp</title>
+    <link rel="stylesheet" href="css/app.css" />
+    <script src="https://kit.fontawesome.com/a14ed7ec88.js" crossorigin="anonymous"></script>
+</head>
 
-		<script src="https://unpkg.com/vue@3"></script>
-		<script src="js/app.js"></script>
-	</body>
+<body>
+    <div id="app">
+        <div class="container__app">
+            <!-- app left sidebar  -->
+            <aside class="app__sidebar">
+                <div class="sidebar__heading-profile">
+                    <div class="col-4">
+                        <figure class="profile__avatar-wrapper">
+                            <img class="profile__avatar" src="./img/avatar_1.jpg" alt="" />
+                        </figure>
+                    </div>
+                    <div class="col-6 profile__name-wrapper">
+                        <div class="profile__name">Gianluca</div>
+                    </div>
+                    <div class="col-2">
+                        <i class="class=" fa-solid fa-ellipsis-vertical style="color: #6d6f74"></i>
+                    </div>
+                </div>
+
+                <div class="sidebar__notification-control">
+                    <div class="col-4 control__bell-wrapper">
+                        <div class="control__bell">
+                            <i class="fa-solid fa-bell-slash"></i>
+                        </div>
+                    </div>
+                    <div class="col-8 notification__wrapper">
+                        <h4>Ricevi notifiche di nuovi messaggi</h4>
+                        <p>Lorem ipsum dolor sit amet et?</p>
+                    </div>
+                </div>
+
+                <div class="sidebar__search-box">
+                    <div class="col-4">
+                        <button class="search__button">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    <div class="col-8">
+                        <input class="search__text" type="text" placeholder="Cerca o inizia una nuova chat" />
+                    </div>
+                </div>
+
+                <div class="sidebar__body">
+                    <ul>
+                        <li class="body__profile">
+                            <div class="col-4">
+                                <figure class="profile__avatar-wrapper">
+                                    <img class="profile__avatar" src="./img/avatar_1.jpg" alt="" />
+                                </figure>
+                            </div>
+                            <div class="col-6 profile__name-wrapper">
+                                <div class="profile__name">Gianluca</div>
+                                <div class="profile__last-message">
+                                    Lorem ipsum dolor sit amet consecutor
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <span class="profile__time">12:00</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- finish sidebar left -->
+
+            <!-- app main content -->
+            <main class="app__main">
+                <div class="main__heading-status">
+                    <div class="col-3">
+                        <figure class="profile__avatar-wrapper">
+                            <img class="profile__avatar" src="./img/avatar_1.jpg" alt="" />
+                        </figure>
+                    </div>
+                    <div class="col-6 profile__name-wrapper">
+                        <div class="profile__name">Gianluca</div>
+                    </div>
+                    <div class="col-3 wrapper-sticker">
+
+                        <i class="fa-solid fa-ellipsis-vertical" style="color: #6d6f74"></i>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-message"></i>                       
+                    </div>
+                </div>
+
+                <div class="main__body-message">
+                    <div class="col-12 ">
+                        <ul class="message__wrapper">
+                            <li class="message__wrapper-right">
+                                <p>lorem ipsum sun</p>
+                                <span>12:00</span>
+                            </li>
+                            <li class="message__wrapper-left">
+                                <p>lorem ipsum gone</p>
+                                <span>12:00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="main__footer-reply">
+                    <div class="col-2 footer__replay-item"> <i class="fa-regular fa-face-smile"></i></div>
+                    <div class="col-8 input__text-wrapper">
+                        <input class="input-text" type="text" placeholder="Scrivi messaggio">
+                    </div>
+                    <div class="col-2 footer__replay-item"><i class="fa-solid fa-microphone"></i></div>
+                </div>
+            </main>
+            <!-- finish main content  -->
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="js/app.js"></script>
+</body>
+
 </html>
