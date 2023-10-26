@@ -5,5 +5,22 @@
 }
 
 #app {
-     
+    padding: 30px;
+}
+
+.container__app {
+  display: grid;
+  grid-template-columns: 490px 910px
+  grid-template-row: auto; 
+  grid-template-areas: "aside main";
+} 
+
+.app__sidebar {
+    grid-area: aside;
+    background-color: red;
+}
+
+.app__main {
+    grid-area: main;
+    background-color: bisque;
 }
