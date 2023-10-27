@@ -112,7 +112,10 @@
 					<div class="main__body-message">
 
 						<ul class="message__wrapper">
-							<li class="message right" v-for="(singleMessage , index) in contacts[ currentIndex].messages  " :key="index" >
+							<li class="message " :class="{
+                                'left': singleMessage.status === 'received',
+                                'right': singleMessage.status === 'sent'
+                            }" v-for="(singleMessage , index) in contacts[ currentIndex].messages  " :key="index" >
 								<div class="message-item  " >
 									<p>{{singleMessage.message}}</p>
 									
