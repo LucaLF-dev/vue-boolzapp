@@ -9,6 +9,10 @@ Requisiti (in ordine di priorità):
 		[ implementare ricerca nomi nella sidebar ]
 		[ implementare un campo input di testo che aggiunge il messaggio scritto dall’utente alla main-chat ]
 		[ implementare una risposta automatica dopo un intervallo di tempo ]
+
+
+
+
 # Boolzapp - a (not very) innovative messaging platform
 
 ## Milestone 1
