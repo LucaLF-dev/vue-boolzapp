@@ -53,14 +53,14 @@
 
                 <div class="sidebar__body">
                     <ul>
-                        <li class="body__profile">
+                        <li class="body__profile" v-for="(contact, index) in contacts" :keyt="index">
                             <div class="col-4">
                                 <figure class="profile__avatar-wrapper">
-                                    <img class="profile__avatar" src="./img/avatar_1.jpg" alt="" />
+                                    <img class="profile__avatar" :src= alt="" />
                                 </figure>
                             </div>
                             <div class="col-6 profile__name-wrapper">
-                                <div class="profile__name">Gianluca</div>
+                                <div class="profile__name">{{contact.name}}</div>
                                 <div class="profile__last-message">
                                     Lorem ipsum dolor sit amet consecutor
                                 </div>
