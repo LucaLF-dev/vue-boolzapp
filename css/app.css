@@ -180,13 +180,40 @@ figure{
 .main__body-message{
     background-image: url("../img/mine.jpg");
     background-size: cover;
-    display:flex ;
-    flex-direction: row;
-    flex-wrap: wrap;
     padding-top: 30px ;
     padding-left:50px ;
     padding-right: 50px;
    
 }
 
+.message__wrapper {
+    list-style: none;
+}
 
+
+.message-item {
+   max-width: 350px;
+    list-style: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.message__wrapper-right {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom:10px ;
+}
+
+.message__wrapper-left {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom:10px ;
+}
+
+.bg-color--green{
+    background-color: green;
+}
+
+.bg-color--white{
+    background-color: white;
+}
