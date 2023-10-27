@@ -140,6 +140,10 @@ figure {
 	border-bottom: 1px solid grey;
 }
 
+.body__profile.active {
+    background-color: grey;
+}
+
 .app__main {
 	grid-area: main;
 	display: grid;
@@ -186,7 +190,7 @@ figure {
 
 
 
-.message-item {
+.message {
 	max-width: 350px;
 	list-style: none;
 	padding: 10px;
@@ -196,22 +200,21 @@ figure {
 .message__wrapper {
 	display: flex;
 	flex-direction: column;
+    gap: 10px;
 }
 
-.message__wrapper-right {
+
+
+.right {
 	align-self: flex-end;
 	margin-bottom: 10px;
+    background-color: green;
+
 }
 
-.message__wrapper-left {
+.left {
 	align-self: flex-start;
 	margin-bottom: 10px;
+    background-color: white;
 }
 
-.bg-color--green {
-	background-color: green;
-}
-
-.bg-color--white {
-	background-color: white;
-}
