@@ -5,6 +5,8 @@ createApp({
     data() {
         return {
             currentIndex: 0,
+            messageToSend: '',
+            SubtimError: false,
             contacts: [
                 {
                     name: 'Michele',
@@ -175,8 +177,31 @@ createApp({
                 },      
             ],
         };
-    },
-    mounted(){
-        console.log("vue ok")
     }
+    ,methods: {
+        addMessage() {
+            if (this.messageToSend.length >= 1) {
+                this.SubtimError = false
+            const newMessage = {
+                date: '',
+                message: this.messageToSend,
+                status: 'sent',
+            }
+            this.contacts[this.currentIndex].messages.push(newMessage)
+            this.messageToSend = '';
+        } else {
+            this.SubtimError = true
+        }
+        },
+        setReceivedMessage() {
+            setTimeout(() => {
+                const autoMessage = {
+                    date: '',
+                    message: 'ok',
+                    status: 'received',
+                }
+                this.contacts[this.currentIndex].messages.push(autoMessage)
+              }, 1000);
+          },
+    },
 }).mount("#app")
