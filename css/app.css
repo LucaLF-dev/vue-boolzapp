@@ -189,6 +189,8 @@ figure img {
 
 /* sidebar body finish */
 
+/* app main  */
+
 .app__main {
 	grid-area: main;
 	display: flex;
@@ -196,69 +198,66 @@ figure img {
 	
 }
 
+/*  main header and footer */
 .main__heading-status,
 .main__footer-reply {
-	
 	background-color:#eaeaea;
 	
 }
 
-.main__body-message {
-	flex-grow: 1;
-	background-image: url("../img/mine.jpg");
-	background-size: contain;
-	padding: 50px;
-}
+
 
 .main__footer-reply {
-	padding: 0 20px;
-}
-.wrapper-sticker {
-	text-align: center;
-	margin: 10px;
 	display: flex;
-	gap: 10px;
+	align-items: center;
+	gap: 20px;
+	padding: 10px 20px;
+}
+
+.input__text-wrapper {
+	flex-grow: 1;
 }
 
 .input-text {
-	height: 60px;
-	border-radius: 10px;
+	width: 100%;
+	height: 40px;
+	border-radius: 15px;
 	border: white;
+	padding-left: 10px;
 }
 
-.footer__replay-item > i {
-	font-size: large;
+.footer__replay-icon {
+	font-size: 20px;
 }
+
+/*  main header and footer  finish*/
 
 .main__body-message {
+	flex-grow: 1;
 	background-image: url("../img/mine.jpg");
-	background-size: cover;
-	padding-top: 30px;
-	padding-left: 50px;
-	padding-right: 50px;
+	background-size: auto;
+	padding: 50px;
 }
 
 .message {
-	max-width: 350px;
-	list-style: none;
-	padding: 10px;
-	border-radius: 10px;
+	max-width: 70%;
+	padding: 10px 17px;
+	border-radius: 15px;
 }
 
 .message__wrapper {
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	gap: 12px;
 }
 
 .right {
 	align-self: flex-end;
-	margin-bottom: 10px;
-	background-color: green;
+	background-color: #d5f9ba;
 }
 
 .left {
 	align-self: flex-start;
-	margin-bottom: 10px;
 	background-color: white;
 }
+ /* app main finish */

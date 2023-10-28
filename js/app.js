@@ -6,7 +6,7 @@ createApp({
         return {
             currentIndex: 0,
             messageToSend: '',
-            SubtimError: false,
+            subtimError: false,
             contacts: [
                 {
                     name: 'Michele',
@@ -181,7 +181,7 @@ createApp({
     ,methods: {
         addMessage() {
             if (this.messageToSend.length >= 1) {
-                this.SubtimError = false
+                this.subtimError = false
             const newMessage = {
                 date: '',
                 message: this.messageToSend,
@@ -190,7 +190,7 @@ createApp({
             this.contacts[this.currentIndex].messages.push(newMessage)
             this.messageToSend = '';
         } else {
-            this.SubtimError = true
+            this.subtimError = true
         }
         },
         setReceivedMessage() {

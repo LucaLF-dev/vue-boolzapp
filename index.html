@@ -136,10 +136,10 @@
 					</div>
 
 					<div class="main__footer-reply">
-						<div class="col-2 footer__replay-item">
+						<div class="footer__replay-icon">
 							<i class="fa-regular fa-face-smile"></i>
 						</div>
-						<div class="col-8 input__text-wrapper">
+						<div class=" input__text-wrapper">
 							<input
 								class="input-text"
 								type="text"
@@ -147,11 +147,11 @@
 								@keyup.enter="addMessage();setReceivedMessage();"
 								v-model.trim="messageToSend"
 							/>
-							<div v-if="error" class="error">
+							<div v-if="subtimError" class="subtimError">
 								<small>Devi inserire minimo 1 carattere</small>
 							</div>
 						</div>
-						<div class="col-2 footer__replay-item">
+						<div class=" footer__replay-icon">
 							<i class="fa-solid fa-microphone"></i>
 						</div>
 					</div>
