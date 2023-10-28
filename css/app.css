@@ -64,7 +64,7 @@ figure img {
 }
 
 .contact {
-	padding: 10px;
+	padding: 10px 16px;
 	display: flex;
 	align-items: center;
 	gap: 10px;
@@ -74,7 +74,7 @@ figure img {
 
 
 .sidebar__heading-profile {
-	padding: 10px 16px;
+	
 	background-color: #eaeaea;
 }
 
@@ -206,12 +206,20 @@ figure img {
 }
 
 
-
 .main__footer-reply {
 	display: flex;
 	align-items: center;
 	gap: 20px;
 	padding: 10px 20px;
+}
+
+.profile__name-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+}
+.profile__last-access {
+	font-size: 12px;
 }
 
 .input__text-wrapper {

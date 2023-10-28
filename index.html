@@ -78,8 +78,9 @@
 								
 								<div class="profile__name-wrapper">
 									<h4 class="profile__name">{{contact.name}}</h4>
-									<p class="profile__last-message">
-										Lorem ipsum dolor sit amet consecutor
+									<p class="profile__last-message" v-for="(messageFirst , index) in contacts[index].messages" 
+									:key="index">{{contact.name}} : {{messageFirst.message}}
+									
 									</p>
 								</div>
 							</div>
@@ -97,11 +98,11 @@
 
 						<div class="contact ">
 							<figure class="profile__avatar-wrapper">
-								<img class="profile__avatar" src="./img/avatar_1.jpg" alt="" />
+								<img class="profile__avatar" :src="contacts[currentIndex].avatar" alt="" />
 							</figure>
 							<div class="profile__name-wrapper">
-								<h4 class="profile__name">Gianluca</h4>
-								<p class="profile__last-acces">Lorem ipsum dolor sit amet consecutor </p>
+								<h4 class="profile__name">{{contacts[currentIndex].name}}</h4>
+								<p class="profile__last-acces">Ultimo accesso oggi alle 14:36</p>
 							</div>
 							<ul class="menu-icons">
 								<li class="icon">
