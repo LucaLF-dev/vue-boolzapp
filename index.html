@@ -13,42 +13,45 @@
 
 	<body>
 		<div id="app">
-			<div class="container__app">
+			<div class="app__body container">
 				<!-- app left sidebar  -->
 				<aside class="app__sidebar">
-					<div class="sidebar__heading-profile">
-						<div class="col-4">
-							<figure class="profile__avatar-wrapper">
-								<img class="profile__avatar" src="./img/avatar_1.jpg" alt="" />
-							</figure>
+					<div class="contact sidebar__heading-profile">
+						<figure class="profile__avatar-wrapper">
+							<img class="profile__avatar" src="./img/avatar_1.jpg" alt="" />
+						</figure>
+						<div class="profile__name-wrapper">
+							<h4 class="profile__name">Gianluca</h4>
 						</div>
-						<div class="col-6 profile__name-wrapper">
-							<div class="profile__name">Gianluca</div>
-						</div>
-						<div class="col-2">
-							<i class="fa-solid fa-ellipsis-vertical"></i>
-						</div>
+						<ul class="menu-icons">
+							<li class="icon">
+								<i class="fa-solid fa-magnifying-glass"></i>
+							</li>
+							<li class="icon">
+								<i class="fa-solid fa-paperclip"></i>
+							</li>
+							<li class="icon">
+								<i class="fa-solid fa-ellipsis-vertical"></i>
+							</li>
+						</ul>
 					</div>
 
-					<div class="sidebar__notification-control">
-						<div class="col-4 control__bell-wrapper">
-							<div class="control__bell">
-								<i class="fa-solid fa-bell-slash"></i>
-							</div>
+					<div class="sidebar__box-alert">
+						<div class="control__bell">
+							<i class="fa-solid fa-bell-slash"></i>
 						</div>
-						<div class="col-8 notification__wrapper">
+
+						<div class="notification__wrapper">
 							<h4>Ricevi notifiche di nuovi messaggi</h4>
 							<p>Lorem ipsum dolor sit amet et?</p>
 						</div>
 					</div>
 
 					<div class="sidebar__search-box">
-						<div class="col-4">
+						<div class="input__group">
 							<button class="search__button">
 								<i class="fa-solid fa-magnifying-glass"></i>
 							</button>
-						</div>
-						<div class="col-8">
 							<input
 								class="search__text"
 								type="text"
@@ -58,28 +61,29 @@
 					</div>
 
 					<div class="sidebar__body">
-						<ul>
+						<ul class="contacts">
 							<li
 								class="body__profile"
 								v-for="(contact, index) in contacts"
-								:key="index" :class="{
+								:key="index"
+								:class="{
                                     'active': index === currentIndex
-                                }" @click="currentIndex = index"
+                                }"
+								@click="currentIndex = index"
 							>
-								<div class="col-4">
+								<div class="contact">
 									<figure class="profile__avatar-wrapper">
 										<img class="profile__avatar" :src="contact.avatar" alt="" />
 									</figure>
-								</div>
-								<div class="col-6 profile__name-wrapper">
-									<div class="profile__name">{{contact.name}}</div>
-									<div class="profile__last-message">
+								
+								<div class="profile__name-wrapper">
+									<h4 class="profile__name">{{contact.name}}</h4>
+									<p class="profile__last-message">
 										Lorem ipsum dolor sit amet consecutor
-									</div>
+									</p>
 								</div>
-								<div class="col-2">
-									<span class="profile__time">12:00</span>
-								</div>
+							</div>
+								<span class="time">12:00</span>
 							</li>
 						</ul>
 					</div>
@@ -90,38 +94,44 @@
 				<!-- app main content -->
 				<main class="app__main">
 					<div class="main__heading-status">
-						<div class="col-3">
+
+						<div class="contact ">
 							<figure class="profile__avatar-wrapper">
-								<img class="profile__avatar" :src="contacts[currentIndex].avatar" alt="" />
+								<img class="profile__avatar" src="./img/avatar_1.jpg" alt="" />
 							</figure>
-						</div>
-						<div class="col-6 profile__name-wrapper">
-							<h4 class="profile__name">{{contacts[currentIndex].name}}</h4>
-                            <p class="profile__text">Lorem ipsum dolor sit.</p>
-						</div>
-						<div class="col-3 wrapper-sticker">
-							<i
-								class="fa-solid fa-ellipsis-vertical"
-								style="color: #6d6f74"
-							></i>
-							<i class="fa-solid fa-magnifying-glass"></i>
-							<i class="fa-solid fa-message"></i>
+							<div class="profile__name-wrapper">
+								<h4 class="profile__name">Gianluca</h4>
+								<p class="profile__last-acces">Lorem ipsum dolor sit amet consecutor </p>
+							</div>
+							<ul class="menu-icons">
+								<li class="icon">
+									<i class="fa-solid fa-magnifying-glass"></i>
+								</li>
+								<li class="icon">
+									<i class="fa-solid fa-paperclip"></i>
+								</li>
+								<li class="icon">
+									<i class="fa-solid fa-ellipsis-vertical"></i>
+								</li>
+							</ul>
 						</div>
 					</div>
 
 					<div class="main__body-message">
-
 						<ul class="message__wrapper">
-							<li class="message " :class="{
+							<li
+								class="message"
+								:class="{
                                 'left': singleMessage.status === 'received',
                                 'right': singleMessage.status === 'sent',
-                            }" v-for="(singleMessage , index) in contacts[currentIndex].messages  " :key="index" >
-								<div class="message-item  " >
+                            }"
+								v-for="(singleMessage , index) in contacts[currentIndex].messages  "
+								:key="index"
+							>
+								<div class="message-item">
 									<p>{{singleMessage.message}}</p>
-									
 								</div>
 							</li>
-							
 						</ul>
 					</div>
 
@@ -134,12 +144,12 @@
 								class="input-text"
 								type="text"
 								placeholder="Scrivi messaggio"
-                                @keyup.enter="addMessage();setReceivedMessage();"
-                                v-model.trim="messageToSend"
+								@keyup.enter="addMessage();setReceivedMessage();"
+								v-model.trim="messageToSend"
 							/>
-                            <div v-if="error"  class="error">
-                                <small>Devi inserire minimo 1 carattere</small> 
-                            </div>
+							<div v-if="error" class="error">
+								<small>Devi inserire minimo 1 carattere</small>
+							</div>
 						</div>
 						<div class="col-2 footer__replay-item">
 							<i class="fa-solid fa-microphone"></i>
