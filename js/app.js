@@ -189,11 +189,6 @@ createApp({
             }
             this.contacts[this.currentIndex].messages.push(newMessage)
             this.messageToSend = '';
-        } else {
-            this.subtimError = true
-        }
-        },
-        setReceivedMessage() {
             setTimeout(() => {
                 const autoMessage = {
                     date: '',
@@ -201,7 +196,11 @@ createApp({
                     status: 'received',
                 }
                 this.contacts[this.currentIndex].messages.push(autoMessage)
-              }, 1000);
-          },
+              }, 2000);
+        } else {
+            this.subtimError = true
+        }
+        },
+        
     },
 }).mount("#app")

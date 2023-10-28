@@ -144,7 +144,7 @@
 								class="input-text"
 								type="text"
 								placeholder="Scrivi messaggio"
-								@keyup.enter="addMessage();setReceivedMessage();"
+								@keyup.enter="addMessage();"
 								v-model.trim="messageToSend"
 							/>
 							<div v-if="subtimError" class="subtimError">
