@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
 	data() {
 		return {
+            dropdown_message: false,
 			searchBox: "",
 			currentIndex: 0,
 			messageToSend: "",
@@ -192,9 +193,12 @@ createApp({
 					this.contacts[this.currentIndex].messages.push(autoMessage);
 				}, 2000);
 			} else {
-				this.subtimError = true;
+				this.dispaly = !this.subtimError;
 			}
 		},
+        toggleMessage() {
+            this.display = !this.display;
+        }
 	},
 	computed: {
 		filteredList() {

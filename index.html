@@ -65,7 +65,7 @@
 						<ul class="contacts">
 							<li
 								class="body__profile"
-								v-for="(contact, index) in filteredList" :key="currentName"  :log="console.log(filteredList)"
+								v-for="(contact, index) in filteredList" :key="contact"  :log="console.log(filteredList)"
 								:class="{
                                     'active': index === currentIndex,
 							
@@ -84,7 +84,7 @@
 										<div class="profile__text-wrapper">
 											
 											<p
-												class="profile__last-message"
+												class="profile__last-message" 
 												
 											>
 												<span
@@ -144,15 +144,23 @@
 								:class="{
                                 'left': singleMessage.status === 'received',
                                 'right': singleMessage.status === 'sent',
-                            }"
+                            }" @click="dropdown_message=!dropdown_message"
 								v-for="(singleMessage , index) in contacts[currentIndex].messages  "
 								:key="index"
 							>
 								<div class="message-item">
 									<p>{{singleMessage.message}}</p>
 								</div>
+
+								<div class="dropdown_message "  v-show="dropdown_message"  >
+									<ul class="dropdown-list">
+										<li>Message info</li>
+										<li>Delete message</li>
+									</ul>
+								</div>
 							</li>
 						</ul>
+						
 					</div>
 
 					<div class="main__footer-reply">
