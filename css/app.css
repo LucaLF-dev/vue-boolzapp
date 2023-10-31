@@ -260,7 +260,11 @@ figure img {
 }
 
 
-
+.message-item > p {
+	white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 
 
 .dropdown-list{
