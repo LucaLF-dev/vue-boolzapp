@@ -269,6 +269,10 @@ figure img {
 	gap: 10px;
 }
 
+.dropdown-list.invisible {
+	visibility: hidden;
+}
+
 .message__wrapper {
 	display: flex;
 	flex-direction: column;

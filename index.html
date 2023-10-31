@@ -113,12 +113,12 @@
 							<figure class="profile__avatar-wrapper">
 								<img
 									class="profile__avatar"
-									:src="contacts[currentIndex].avatar"
+									:src="filteredList[currentIndex].avatar"
 									alt=""
 								/>
 							</figure>
 							<div class="profile__name-wrapper">
-								<h4 class="profile__name">{{contacts[currentIndex].name}}</h4>
+								<h4 class="profile__name">{{filteredList[currentIndex].name}}</h4>
 								<p class="profile__last-acces">
 									Ultimo accesso oggi alle 14:36
 								</p>
@@ -155,7 +155,11 @@
 								<div class="dropdown_message "  v-show="dropdown_message"  >
 									<ul class="dropdown-list">
 										<li>Message info</li>
-										<li>Delete message</li>
+										<li  :class="{
+											'invisible': index === currentIndex,
+									
+										}"
+										@click="currentIndex = index">Delete message</li>
 									</ul>
 								</div>
 							</li>
