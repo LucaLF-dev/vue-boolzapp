@@ -70,7 +70,7 @@
                                     'active': index === currentIndex,
 							
                                 }"
-								@click="currentIndex = index"
+								@click="currentIndex = index, currentMessageIndex = index"
 							>
 								<div class="contact">
 									<figure class="profile__avatar-wrapper">
@@ -137,14 +137,14 @@
 						</div>
 					</div>
 
-					<div class="main__body-message">
+					<div class="main__body-message" @click="currentMessageIndex = -1">
 						<ul class="message__wrapper">
 							<li
 								class="message"
 								:class="{
                                 'left': singleMessage.status === 'received',
                                 'right': singleMessage.status === 'sent',
-                            }" @click="dropdown_message=!dropdown_message"
+                            }" @click.stop="currentMessageIndex = index"
 								v-for="(singleMessage , index) in contacts[currentIndex].messages  "
 								:key="index"
 							>
@@ -152,14 +152,14 @@
 									<p>{{singleMessage.message}}</p>
 								</div>
 
-								<div class="dropdown_message "  v-show="dropdown_message"  >
+								<div class="dropdown_message "  v-show="currentMessageIndex === index"  >
 									<ul class="dropdown-list">
 										<li>Message info</li>
 										<li  :class="{
 											'invisible': index === currentIndex,
 									
 										}"
-										@click.stop="currentIndex = index">Delete message</li>
+										@click.stop="">Delete message</li>
 									</ul>
 								</div>
 							</li>

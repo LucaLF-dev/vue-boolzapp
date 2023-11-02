@@ -6,6 +6,7 @@ createApp({
 			dropdown_message: false,
 			searchBox: "",
 			currentIndex: 0,
+			currentMessageIndex: -1,
 			messageToSend: "",
 			subtimError: false,
 			contacts: [
